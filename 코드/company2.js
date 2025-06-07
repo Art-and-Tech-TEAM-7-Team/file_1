@@ -1,12 +1,12 @@
 export function makeCompanySketch() {
   return function (p) {
-    let companyIMG, img, documentImg;
+    let company2IMG, img, documentImg;
     let clockIMG;
     let bossX, bossY, bossW, bossH;
     let clockX, clockY;
     let documentStack = [];
     let documentTimer = 0;
-    let maxDocuments = 30;
+    let maxDocuments = 12;
     let showSpeech = false;
     let alpha = 0;
     let fadingIn = true;
@@ -30,8 +30,8 @@ export function makeCompanySketch() {
     let coffeeW=70;
 
     p.preload = function () {
-      companyIMG = p.loadImage("assets/company.png");
-      img = p.loadImage("assets/boss1.png");
+      company2IMG = p.loadImage("assets/company2.png");
+      img = p.loadImage("assets/boss2.png");
       documentImg = p.loadImage("assets/paper.png");
       clockIMG=p.loadImage("assets/clock.png");
        for (let i = 0; i < 5; i++) {
@@ -65,8 +65,8 @@ export function makeCompanySketch() {
     };
 
     function resetClock() {
-      hourAngle = p.radians(255);
-      minuteAngle = p.radians(180);
+      hourAngle = p.radians(275);
+      minuteAngle = p.radians(60);
       targetHourAngle = p.radians(195);
       targetMinuteAngle = minuteAngle + p.TWO_PI * 10;
 
@@ -222,7 +222,7 @@ function drawHoverBoss(img, x, y) {
         p.noStroke();
         p.textSize(14);
         p.textAlign(p.CENTER, p.CENTER);
-        p.text("오늘 출근도 빠르고 근무태도도 성실하군요~.", balloonX + 150, balloonY + 25);
+        p.text("오늘 지각도 하시고 근무태도도 불량하시군요?!!", balloonX + 150, balloonY + 25);
       }
 
       switch (selectCoffee) {
